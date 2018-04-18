@@ -4,9 +4,9 @@ import gas from 'rollup-plugin-gas';
 import nodeResolve from 'rollup-plugin-node-resolve';
 
 export default {
-  input: 'src/index.js',
+  input: 'src/app.js',
   output: {
-    file: 'dist/index.js',
+    file: 'dist/app.js',
     format: 'es',
   },
   plugins: [
@@ -15,6 +15,9 @@ export default {
       exclude: 'node_modules/**',
     }),
     gas(),
-    copy({ 'src/appsscript.json': 'dist/appsscript.json' }),
+    copy({
+      'src/appsscript.json': 'dist/appsscript.json',
+      'src/index.html': 'dist/index.html',
+    }),
   ],
 };

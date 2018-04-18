@@ -1,7 +1,7 @@
 {
   "name": "bitrise-apps",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.js",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -24,14 +24,11 @@
   },
   "scripts": {
     "precommit": "lint-staged",
+    "rollup": "rollup -c",
     "deploy": "rollup -c && clasp push"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier-eslint --write",
-      "eslint",
-      "git add"
-    ]
+    "*.js": ["prettier-eslint --write", "eslint", "git add"]
   },
   "dependencies": {},
   "importSort": {
